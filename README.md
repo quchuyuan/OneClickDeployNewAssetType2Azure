@@ -9,6 +9,8 @@ Click the button below to deploy the component to your Azure Machine Learning Wo
 
 [![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fquchuyuan%2FOneClickDeployNewAssetType2Azure%2Fmain%2FSimple%2Fdeploy.json)
 
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fquchuyuan%2FOneClickDeployNewAssetType2Azure%2Fmain%2FSimple%2Fdeploy.json%26api-version%3D6.0)
+
 ## Prerequisites
 - Azure subscription
 - Azure Machine Learning Workspace
