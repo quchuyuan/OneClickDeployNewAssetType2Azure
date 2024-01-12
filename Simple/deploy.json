@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "registryName": {
+        "type": "string"
+      },
+      "componentName": {
+        "type": "string"
+      }
+    },
+    "resources": [
+      {
+        "type": "Microsoft.Resources/deploymentScripts",
+        "apiVersion": "2020-10-01",
+        "name": "runExternalScript",
+        "location": "[resourceGroup().location]",
+        "kind": "AzureCLI",
+        "properties": {
+            "azCliVersion": "2.20.0",
+            "scriptUri": "https://path-to-your-script/script.sh",
+            "scriptArguments": "[concat('--registryName ', parameters('registryName'), ' --componentName ', parameters('componentName'))]",
+            "timeout": "PT30M",
+            "cleanupPreference": "Always",
+            "retentionInterval": "P1D",
+            "identity": {
+                "type": "SystemAssigned"
+            }
+        }
+      }
+    ]
+}
+  
