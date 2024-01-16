@@ -17,7 +17,7 @@
         "location": "[resourceGroup().location]",
         "kind": "AzureCLI",
         "properties": {
-            "azCliVersion": "2.54.0",
+            "azCliVersion": "2.30.0",
             "primaryScriptUri": "https://raw.githubusercontent.com/quchuyuan/OneClickDeployNewAssetType2Azure/main/Simple/deploymentScript.sh",
             "scriptArguments": "[concat('--registryName ', parameters('registryName'), ' --componentName ', parameters('componentName'))]",
             "timeout": "PT30M",
