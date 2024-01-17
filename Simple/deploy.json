@@ -2,7 +2,13 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-      "registryName": {
+      "subscriptionId": {
+        "type": "string"
+      },
+      "resourceGroupName": {
+        "type": "string"
+      },
+      "workspaceName": {
         "type": "string"
       },
       "componentName": {
@@ -19,7 +25,7 @@
         "properties": {
             "azCliVersion": "2.30.0",
             "primaryScriptUri": "https://raw.githubusercontent.com/quchuyuan/OneClickDeployNewAssetType2Azure/main/Simple/deploymentScript.sh",
-            "scriptArguments": "[concat('--registryName ', parameters('registryName'), ' --componentName ', parameters('componentName'))]",
+            "scriptArguments": "[concat('--subscriptionId ', parameters('subscriptionId'), ' --resourceGroupName ', parameters('resourceGroupName'), ' --workspaceName ', parameters('workspaceName'), ' --componentName ', parameters('componentName'))]",
             "timeout": "PT30M",
             "cleanupPreference": "Always",
             "retentionInterval": "P1D",
