@@ -10,7 +10,8 @@ Click the button below to deploy the component to your Azure Machine Learning Wo
 1. Simple cli command to get workspace component information:
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fquchuyuan%2FOneClickDeployNewAssetType2Azure%2Fmain%2FSimple%2Fdeploy.json)
 
-2. Try using python script in the cli commands: 
+2. Try using python script in the cli commands:
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fquchuyuan%2FOneClickDeployNewAssetType2Azure%2Fmain%2FPython%2Fdeploy.json)
 
 
 ## Prerequisites
