@@ -23,7 +23,7 @@
     "outputs": {
       "scriptOutput": {
           "type": "string",
-          "value": "[reference('runExternalScript').outputs]"
+          "value": "[reference('runExternalScript').outputs.text]"
       }
   }
 }
