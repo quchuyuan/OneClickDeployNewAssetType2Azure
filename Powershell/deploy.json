@@ -1,6 +1,20 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "type": "string"
+        },
+        "workspaceName": {
+            "type": "string"
+        },
+        "componentName": {
+            "type": "string"
+        }
+    },
     "resources": [
       {
         "type": "Microsoft.Resources/deploymentScripts",
@@ -11,6 +25,7 @@
         "properties": {
             "azPowerShellVersion": "8.3",
             "primaryScriptUri": "https://raw.githubusercontent.com/quchuyuan/OneClickDeployNewAssetType2Azure/main/Powershell/deploymentScript.ps1",
+            "arguments": "[concat('-subscriptionId ', parameters('subscriptionId'), ' -resourceGroupName ', parameters('resourceGroupName'), ' -workspaceName ', parameters('workspaceName'), ' -componentName ', parameters('componentName'))]",
             "timeout": "PT30M",
             "cleanupPreference": "Always",
             "retentionInterval": "P1D",
