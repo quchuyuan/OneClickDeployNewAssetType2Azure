@@ -7,9 +7,9 @@
         "apiVersion": "2020-10-01",
         "name": "runExternalScript",
         "location": "[resourceGroup().location]",
-        "kind": "AzureCLI",
+        "kind": "AzurePowerShell",
         "properties": {
-            "azCliVersion": "2.30.0",
+            "azPowerShellVersion": "8.3",
             "primaryScriptUri": "https://raw.githubusercontent.com/quchuyuan/OneClickDeployNewAssetType2Azure/main/Python/deploymentScript.ps1",
             "timeout": "PT30M",
             "cleanupPreference": "Always",
