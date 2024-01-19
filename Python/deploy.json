@@ -10,7 +10,7 @@
         "kind": "AzureCLI",
         "properties": {
             "azCliVersion": "2.30.0",
-            "primaryScriptUri": "https://raw.githubusercontent.com/quchuyuan/OneClickDeployNewAssetType2Azure/main/Python/deploymentScript.sh",
+            "primaryScriptUri": "https://raw.githubusercontent.com/quchuyuan/OneClickDeployNewAssetType2Azure/main/Python/deploymentScript.ps1",
             "timeout": "PT30M",
             "cleanupPreference": "Always",
             "retentionInterval": "P1D",
