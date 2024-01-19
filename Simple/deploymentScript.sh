@@ -26,4 +26,7 @@ accessToken=$(az account get-access-token --query accessToken -o tsv)
 apiUrl="https://management.azure.com/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.MachineLearningServices/workspaces/$workspaceName/components/$componentName?api-version=2021-03-01-preview"
 
 # Use curl to make the HTTP GET request
-curl -X GET $apiUrl -H "Authorization: Bearer $accessToken" -H "Content-Type: application/json"
+apiResponse=$(curl -X GET $apiUrl -H "Authorization: Bearer $accessToken" -H "Content-Type: application/json")
+
+# Format the response as JSON and write to the output path
+jq -n --arg response "$apiResponse" '{"results": $response}' > $AZ_SCRIPTS_OUTPUT_PATH
