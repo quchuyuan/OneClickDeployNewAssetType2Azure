@@ -13,6 +13,9 @@ Click the button below to deploy the component to your Azure Machine Learning Wo
 2. Try using python script in the cli commands:
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fquchuyuan%2FOneClickDeployNewAssetType2Azure%2Fmain%2FPython%2Fdeploy.json)
 
+3. Try using powershell:
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fquchuyuan%2FOneClickDeployNewAssetType2Azure%2Fmain%2FPowershell%2Fdeploy.json)
+
 
 ## Prerequisites
 - Azure subscription
