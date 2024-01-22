@@ -16,6 +16,9 @@ Click the button below to deploy the component to your Azure Machine Learning Wo
 3. Try using powershell:
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fquchuyuan%2FOneClickDeployNewAssetType2Azure%2Fmain%2FPowershell%2Fdeploy.json)
 
+4. Try using AZURE SDK:
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fquchuyuan%2FOneClickDeployNewAssetType2Azure%2Fmain%2FSDK%2Fdeploy.json)
+
 
 ## Prerequisites
 - Azure subscription
