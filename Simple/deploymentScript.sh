@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Log in to Azure with the managed identity
+az login --identity
+
 # Acquire an Azure access token
 accessToken=$(az account get-access-token --query accessToken -o tsv)
 
