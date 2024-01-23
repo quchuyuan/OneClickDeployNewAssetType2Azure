@@ -25,7 +25,21 @@
         "properties": {
             "azCliVersion": "2.30.0",
             "primaryScriptUri": "https://raw.githubusercontent.com/quchuyuan/OneClickDeployNewAssetType2Azure/main/Simple/deploymentScript.sh",
-            "scriptArguments": "[concat('--subscriptionId ', parameters('subscriptionId'), ' --resourceGroupName ', parameters('resourceGroupName'), ' --workspaceName ', parameters('workspaceName'), ' --componentName ', parameters('componentName'))]",
+            "environmentVariables": [
+              {
+                "name": "subscriptionId",
+                "value": "[parameters('subscriptionId')]"
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "[parameters('resourceGroupName')]"
+              },              {
+                "name": "workspaceName",
+                "value": "[parameters('workspaceName')]"
+              },              {
+                "name": "componentName",
+                "value": "[parameters('componentName')]"
+              }],
             "timeout": "PT30M",
             "cleanupPreference": "Always",
             "retentionInterval": "P1D",

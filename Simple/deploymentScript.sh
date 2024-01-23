@@ -1,24 +1,5 @@
 #!/bin/bash
 
-# Parsing arguments passed from the ARM template
-while [ "$1" != "" ]; do
-    case $1 in
-        --subscriptionId )   shift
-                             subscriptionId=$1
-                             ;;
-        --resourceGroupName ) shift
-                              resourceGroupName=$1
-                              ;;
-        --workspaceName )   shift
-                           workspaceName=$1
-                           ;;
-        --componentName )  shift
-                           componentName=$1
-                           ;;
-    esac
-    shift
-done
-
 # Acquire an Azure access token
 accessToken=$(az account get-access-token --query accessToken -o tsv)
 
