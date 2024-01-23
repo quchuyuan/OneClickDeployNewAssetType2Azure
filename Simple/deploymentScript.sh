@@ -4,7 +4,8 @@
 az login --identity
 
 # Acquire an Azure access token
-accessToken=$(az account get-access-token --query accessToken -o tsv)
+accessToken=$(az account get-access-token)
+#$(az account get-access-token --query accessToken -o tsv)
 jq -n --arg token "$accessToken" '{"token": $token}' > $AZ_SCRIPTS_OUTPUT_PATH
 # Define the Azure ML REST API endpoint for fetching component info
 apiUrl="https://management.azure.com/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.MachineLearningServices/workspaces/$workspaceName/components/$componentName?api-version=2023-10-01"
