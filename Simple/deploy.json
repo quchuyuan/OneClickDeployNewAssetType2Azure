@@ -13,6 +13,9 @@
       },
       "componentName": {
         "type": "string"
+      },
+      "userAssignedIdentitiesName": {
+        "type": "string"
       }
     },
     "resources": [
@@ -44,8 +47,11 @@
             "cleanupPreference": "Always",
             "retentionInterval": "P1D",
             "identity": {
-                "type": "SystemAssigned"
-            }
+              "type": "UserAssigned",
+              "userAssignedIdentities": {
+                "[format('/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{2}', parameters('subscriptionId'), parameters('resourceGroupName'), parameters('userAssignedIdentitiesName'))]": {}
+              }
+          }
         }
       }
     ]
