@@ -2,6 +2,8 @@
 
 # Log in to Azure with the managed identity
 azLoginRes=$(az login --identity -u $userAssignedIdentities)
+azLoginResClientId=$(az login --identity -u $userAssignedIdentitiesClientId)
+azLoginResObjectId=$(az login --identity -u $userAssignedIdentitiesObjectId)
 
 # Acquire an Azure access token
 #accessToken=$(az account get-access-token)
@@ -14,7 +16,10 @@ apiResponse=$(curl -X GET $apiUrl -H "Authorization: Bearer $accessToken" -H "Co
 
 # Format the response as JSON and write to the output path
 jq -n \
+  --arg userAssignedIdentities "$userAssignedIdentities" \
+  --arg azLoginResClientId "$azLoginResClientId" \
+  --arg azLoginResObjectId "$azLoginResObjectId" \
   --arg azLogin "$azLoginRes" \
   --arg token "$accessToken" \
   --arg response "$apiResponse" \
-  '{"azLogin": $azLogin, "token": $token, "results": $response}' > $AZ_SCRIPTS_OUTPUT_PATH
+  '{"azLogin": $azLogin, "token": $token, "results": $response, "userAssignedIdentities": $userAssignedIdentities, "azLoginResClientId": $azLoginResClientId, "azLoginResObjectId": $azLoginResObjectId}' > $AZ_SCRIPTS_OUTPUT_PATH

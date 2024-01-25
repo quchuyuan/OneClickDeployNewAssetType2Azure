@@ -16,6 +16,12 @@
       },
       "userAssignedIdentitiesName": {
         "type": "string"
+      },
+      "userAssignedIdentitiesClientId": {
+        "type": "string"
+      },
+      "userAssignedIdentitiesObjectId": {
+        "type": "string"
       }
     },
     "resources": [
@@ -48,6 +54,14 @@
               {
                 "name": "userAssignedIdentities",
                 "value": "[format('/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{2}', parameters('subscriptionId'), parameters('resourceGroupName'), parameters('userAssignedIdentitiesName'))]"
+              },
+              {
+                "name": "userAssignedIdentitiesClientId",
+                "value": "[parameters('userAssignedIdentitiesClientId')]"
+              },
+              {
+                "name": "userAssignedIdentitiesObjectId",
+                "value": "[parameters('userAssignedIdentitiesObjectId')]"
               }
             ],
             "timeout": "PT30M",
