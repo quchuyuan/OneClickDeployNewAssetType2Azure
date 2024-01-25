@@ -1,12 +1,11 @@
 #!/bin/bash
 
 # Log in to Azure with the managed identity
-az login --identity -u $userAssignedIdentities
+azLoginRes=$(az login --identity -u $userAssignedIdentities)
 
 # Acquire an Azure access token
 #accessToken=$(az account get-access-token)
 accessToken=$(az account get-access-token --query accessToken -o tsv)
-jq -n --arg token "$accessToken" '{"token": $token}' > $AZ_SCRIPTS_OUTPUT_PATH
 # Define the Azure ML REST API endpoint for fetching component info
 apiUrl="https://management.azure.com/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.MachineLearningServices/workspaces/$workspaceName/components/$componentName?api-version=2023-10-01"
 
@@ -14,4 +13,8 @@ apiUrl="https://management.azure.com/subscriptions/$subscriptionId/resourceGroup
 apiResponse=$(curl -X GET $apiUrl -H "Authorization: Bearer $accessToken" -H "Content-Type: application/json")
 
 # Format the response as JSON and write to the output path
-jq -n --arg response "$apiResponse" '{"results": $response}' > $AZ_SCRIPTS_OUTPUT_PATH
+jq -n \
+  --arg azLogin "$azLoginRes" \
+  --arg token "$accessToken" \
+  --arg response "$apiResponse" \
+  '{"azLogin": $azLogin, "token": $token, "results": $response}' > $AZ_SCRIPTS_OUTPUT_PATH
